@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн номын худалдаа</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="top-row">
+                <div class="site-title">
+                    <h1>Онлайн номын худалдаа</h1>
+                </div>
+
+                <div class="header-right">
+                    <button class="cart-btn" id="openCartBtn">
+                        🛒 Сагс (<span id="cartCount">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <div class="menu-row">
+                <ul class="menu-list">
+
+                    <li class="dropdown" id="book">
+                        <h3>Ном ▼</h3>
+                        <ul class="dropdown-menu-custom" id="bookMenu">
+                            <li class="category-btn active" data-category="all">Бүгд</li>
+                            <li class="category-btn" data-category="programming">Програмчлал</li>
+                            <li class="category-btn" data-category="literature">Уран зохиол</li>
+                            <li class="category-btn" data-category="history">Түүх</li>
+                            <li class="category-btn" data-category="business">Бизнес</li>
+                            <li class="category-btn" data-category="psychology">Сэтгэл зүй</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown" id="account">
+                        <h3>Данс ▼</h3>
+                        <ul class="dropdown-menu-custom" id="accountMenu">
+                            <li>Нэвтрэх</li>
+                            <li>Бүртгүүлэх</li>
+                            <li>Миний захиалга</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown" id="help">
+                        <h3>Тусламж ▼</h3>
+                        <ul class="dropdown-menu-custom" id="helpMenu">
+                            <li>Түгээмэл асуулт</li>
+                            <li>Хүргэлтийн мэдээлэл</li>
+                            <li>Буцаалтын нөхцөл</li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Ном хайх...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">📚 Шинэ цуглуулга 2026</span>
+                <h2>Шилдэг номуудыг <br> онлайнаар захиалаарай</h2>
+                <p>
+                    Програмчлал, уран зохиол, түүх, бизнес, сэтгэл зүй болон
+                    өөрийгөө хөгжүүлэх шилдэг номуудыг нэг дороос сонгоорой.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#bookSection" class="hero-btn primary-btn">Ном үзэх</a>
+                    <a href="#bookSection" class="hero-btn secondary-btn">Хямдрал харах</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <h4>500+</h4>
+                        <span>Номын төрөл</span>
+                    </div>
+                    <div class="stat-box">
+                        <h4>10k+</h4>
+                        <span>Хэрэглэгч</span>
+                    </div>
+                    <div class="stat-box">
+                        <h4>24/7</h4>
+                        <span>Онлайн захиалга</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOK SECTION -->
+    <section class="book-section" id="bookSection">
+        <div class="container">
+            <div class="section-head">
+                <h3>Манай номууд</h3>
+                <p id="resultText">Нийт 0 ном</p>
+            </div>
+
+            <div class="row" id="bookList">
+                <!-- JS-ээр номнууд орж ирнэ -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- CART SIDEBAR -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Таны сагс</h3>
+            <button class="close-btn" id="closeCartBtn">✖</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Сагс хоосон байна.</p>
+        </div>
+
+        <div class="cart-footer">
+            <h4>Нийт: <span id="cartTotal">0₮</span></h4>
+            <button class="clear-btn" id="clearCartBtn">Сагс цэвэрлэх</button>
+            <button class="checkout-btn" id="checkoutBtn">Захиалах</button>
+        </div>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Онлайн номын худалдаа. Бүх эрх хуулиар хамгаалагдсан.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
